@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">practica5</string>
+    <!-- Menú -->
+
+    <string name="action_valoravida">Valora vida</string>
+    <string name="action_fechas">Mostrar entre fechas</string>
+    <string name="action_setting">Configurar</string>
+    <string name="action_about">Acerca de…</string>
+    <string name="action_ordenar">Ordenar</string>
+    <string name="rb_asc">Asc</string>
+    <string name="rb_desc">Desc</string>
+
+</resources>
