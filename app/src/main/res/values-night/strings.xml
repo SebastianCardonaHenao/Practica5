@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_save">guardar</string>
+    <string name="et_resumen">Resumen del día</string>
+    <string name="t_valor_vida">Valora tu día:</string>
+    <string name="speach_valor_vida">selecciona una puntuación para tu día</string>
+    <string name="dia_completo">Cuenta a tu diario tu día…</string>
+</resources>
