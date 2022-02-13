@@ -92,7 +92,7 @@ public class EdicionDiaActivityBien extends AppCompatActivity {
         }else {
             esteDia = new DiaDiario(fecha,valoracion,resumen,contenido);
             Intent iBack = getIntent();
-            iBack.putExtra("Datos", (Parcelable) esteDia);
+            iBack.putExtra("Datos", esteDia);
             setResult(RESULT_OK,iBack);
             finish();
         }

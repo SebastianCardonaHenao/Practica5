@@ -4,10 +4,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.provider.BaseColumns;
 
+import androidx.annotation.NonNull;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.Index;
+import androidx.room.PrimaryKey;
+
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+
+@Entity(tableName = DiaDiario.TABLE_NAME,
+indices = {@Index(value = (DiaDiario.FECHA), unique = true)})
 public class DiaDiario implements Parcelable {
     public static final String TABLE_NAME="diario";
     public static final String ID= BaseColumns._ID;
@@ -16,11 +26,29 @@ public class DiaDiario implements Parcelable {
     public static final String RESUMEN="resumen";
     public static final String CONTENIDO="contenido";
     public static final String FOTO_URI="foto_uri";
+
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    @ColumnInfo(name = ID)
     private int id;
+
+    @ColumnInfo(name = FECHA)
+    @NonNull
     private Date fecha;
+
+    @ColumnInfo(name = VALORACION_DIA)
+    @NonNull
     private int valoracionDia;
+
+    @ColumnInfo(name = RESUMEN)
+    @NonNull
     private String resumen;
+
+    @ColumnInfo(name = CONTENIDO)
+    @NonNull
     private String contenido;
+
+    @ColumnInfo(name = FOTO_URI)
     private String fotoUri;
 
     public int getValoracionResumida(){
@@ -53,7 +81,8 @@ public class DiaDiario implements Parcelable {
         return df.format(fechaHoy);
     }
 
-    public DiaDiario(Date fecha, int valoracionDia, String resumen, String contenido, String fotoUri) {
+    @Ignore
+    public DiaDiario(@NonNull Date fecha,@NonNull int valoracionDia,@NonNull String resumen,@NonNull String contenido, String fotoUri) {
         this.fecha = fecha;
         this.valoracionDia = valoracionDia;
         this.resumen = resumen;
@@ -61,7 +90,7 @@ public class DiaDiario implements Parcelable {
         this.fotoUri = fotoUri;
     }
 
-    public DiaDiario(Date fecha, int valoracionDia, String resumen, String contenido) {
+    public DiaDiario(@NonNull Date fecha,@NonNull int valoracionDia,@NonNull String resumen,@NonNull String contenido) {
         this.fecha = fecha;
         this.valoracionDia = valoracionDia;
         this.resumen = resumen;
@@ -77,35 +106,39 @@ public class DiaDiario implements Parcelable {
         this.id = id;
     }
 
+    @NonNull
     public Date getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(@NonNull Date fecha) {
         this.fecha = fecha;
     }
 
+    @NonNull
     public int getValoracionDia() {
         return valoracionDia;
     }
 
-    public void setValoracionDia(int valoracionDia) {
+    public void setValoracionDia(@NonNull int valoracionDia) {
         this.valoracionDia = valoracionDia;
     }
 
+    @NonNull
     public String getResumen() {
         return resumen;
     }
 
-    public void setResumen(String resumen) {
+    public void setResumen(@NonNull String resumen) {
         this.resumen = resumen;
     }
 
+    @NonNull
     public String getContenido() {
         return contenido;
     }
 
-    public void setContenido(String contenido) {
+    public void setContenido(@NonNull String contenido) {
         this.contenido = contenido;
     }
 

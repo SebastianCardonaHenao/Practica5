@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        btnPrueba = (FloatingActionButton) findViewById(R.id.fab);
+        btnPrueba = findViewById(R.id.fab);
         btnPrueba.setOnClickListener(e->nuevoDia());
 
 
