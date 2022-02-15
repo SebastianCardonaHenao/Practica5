@@ -16,6 +16,10 @@
     <string name="t_valor_vida">Valora tu día:</string>
     <string name="speach_valor_vida">selecciona una puntuación para tu día</string>
     <string name="dia_completo">Cuenta a tu diario tu día…</string>
+    <string name="tvEjemplo">Texto de ejemplo</string>
+    <string name="icono_valor_del_dia">Icono que valua el día</string>
+    <string name="tvFecha">Aquí va la fecha</string>
+    <string name="ic_delete">Borrar día</string>
 
     <string-array name="spinner_vida">
         <item>0</item>

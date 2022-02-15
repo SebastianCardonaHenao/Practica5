@@ -15,7 +15,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 
-@Database(entities = {DiaDiarioDao.class}, version = 1)
+@Database(entities = {DiaDiario.class}, version = 1)
 //Transforma las fechas en enteros
 @TypeConverters({TransformaFechaSQLite.class})
 public abstract class DiaDiarioDatabase extends RoomDatabase {

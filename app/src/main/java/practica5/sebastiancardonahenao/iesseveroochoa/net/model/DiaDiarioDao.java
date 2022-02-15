@@ -47,10 +47,10 @@ public interface DiaDiarioDao {
     LiveData<List<DiaDiario>> getAllDiario();
 
     // Live Data Ordenada
-    @Query("SELECT * FROM "+DiaDiario.TABLE_NAME+" ORDER BY :resumen")
-    LiveData<List<DiaDiario>> getDiarioOrderBy(String resumen);
+    @Query("SELECT * FROM diario WHERE resumen LIKE '%' || :resu || '%'")
+    LiveData<List<DiaDiario>> getDiarioOrderBy(String resu);
 
     // rxJava AVG
-    @Query("SELECT AVG(*) FROM "+DiaDiario.TABLE_NAME)
+    @Query("SELECT AVG(valoracion_dia) FROM "+DiaDiario.TABLE_NAME)
     Single<Float> getValoracionTotal();
 }

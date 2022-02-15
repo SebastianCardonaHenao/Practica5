@@ -1,18 +1,18 @@
 package practica5.sebastiancardonahenao.iesseveroochoa.net.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -80,16 +80,20 @@ public class EdicionDiaActivityBien extends AppCompatActivity {
         String resumen = String.valueOf(tbResumen.getText());
         String contenido = String.valueOf(tbInfoDia.getText());
 
-        if(resumen.equals("")){
+        if (resumen.equals("")) {
             dialogo("El campo resumen no puede estar vacio,\n" +
                     "por favor, rellenelo.");
             setResult(RESULT_CANCELED);
-        }
-        else if(contenido.equals("")){
+        } else if (contenido.equals("")) {
             dialogo("El contenido del día no puede estar vacio,\n" +
                     "por favor, rellenelo.");
             setResult(RESULT_CANCELED);
-        }else {
+        } else if (fecha == null ){
+            dialogo("La fecha es obligatoria,\n" +
+                    "por favor, seleccionela.");
+            setResult(RESULT_CANCELED);
+        }
+        else {
             esteDia = new DiaDiario(fecha,valoracion,resumen,contenido);
             Intent iBack = getIntent();
             iBack.putExtra("Datos", esteDia);

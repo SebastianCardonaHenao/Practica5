@@ -4,7 +4,6 @@ import android.app.Application;
 
 import androidx.lifecycle.LiveData;
 
-import java.util.Date;
 import java.util.List;
 
 import io.reactivex.Single;
@@ -20,7 +19,6 @@ public class DiarioRepositorio {
     //Objetos
     private final DiaDiarioDao diaDiarioDao;
     private LiveData<List<DiaDiario>> allDiaDiario;
-    private Single<Float> valoracion;
 
     //singleton
     public static DiarioRepositorio getInstance(Application application) {
@@ -50,8 +48,7 @@ public class DiarioRepositorio {
 
     //valoracion rxJava
     public Single<Float> getValoracionTotal(){
-        valoracion = diaDiarioDao.getValoracionTotal();
-        return valoracion;
+        return diaDiarioDao.getValoracionTotal();
     }
 
     //lista ordenado por columnas diferentes
@@ -65,9 +62,7 @@ public class DiarioRepositorio {
      */
     public void insert(DiaDiario diario){
         //administramos el hilo con el Executor
-        DiaDiarioDatabase.databaseWriteExecutor.execute(()->{
-            diaDiarioDao.insert(diario);
-        });
+        DiaDiarioDatabase.databaseWriteExecutor.execute(()-> diaDiarioDao.insert(diario));
     }
 
     /*
@@ -75,24 +70,18 @@ public class DiarioRepositorio {
      */
     public void delete(DiaDiario diario){
         //administramos el hilo con el Executor
-        DiaDiarioDatabase.databaseWriteExecutor.execute(()->{
-            diaDiarioDao.deleteByDiaDiario(diario);
-        });
+        DiaDiarioDatabase.databaseWriteExecutor.execute(()-> diaDiarioDao.deleteByDiaDiario(diario));
     }
 
     //Editar el día
     public void update(DiaDiario diario){
         //administramos el hilo con el Executor
-        DiaDiarioDatabase.databaseWriteExecutor.execute(()->{
-            diaDiarioDao.update(diario);
-        });
+        DiaDiarioDatabase.databaseWriteExecutor.execute(()-> diaDiarioDao.update(diario));
     }
 
     // BORRAMOS TODO
     public void deleteAll(){
         //administramos el hilo con el Executor
-        DiaDiarioDatabase.databaseWriteExecutor.execute(()->{
-            diaDiarioDao.deleteAll();
-        });
+        DiaDiarioDatabase.databaseWriteExecutor.execute(diaDiarioDao::deleteAll);
     }
 }
