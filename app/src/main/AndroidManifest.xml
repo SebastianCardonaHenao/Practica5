@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Practica5">
         <activity
+            android:name=".media_average"
+            android:exported="false" />
+        <activity
             android:name=".ui.EdicionDiaActivityBien"
             android:exported="false" />
         <activity

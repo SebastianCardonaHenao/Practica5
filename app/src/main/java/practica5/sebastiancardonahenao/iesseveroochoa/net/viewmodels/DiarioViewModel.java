@@ -10,6 +10,7 @@ import androidx.lifecycle.Transformations;
 
 import java.util.List;
 
+import io.reactivex.Single;
 import practica5.sebastiancardonahenao.iesseveroochoa.net.model.DiaDiario;
 import practica5.sebastiancardonahenao.iesseveroochoa.net.repository.DiarioRepositorio;
 
@@ -50,5 +51,6 @@ public class DiarioViewModel extends AndroidViewModel {
         diarioRepositorio.delete(diario);
     }
     public void update(DiaDiario diario) {diarioRepositorio.update(diario);}
+    public Single<Float> getValoracionTotal(){return diarioRepositorio.getValoracionTotal();}
 
 }

@@ -20,6 +20,7 @@
     <string name="icono_valor_del_dia">Icono que valua el día</string>
     <string name="tvFecha">Aquí va la fecha</string>
     <string name="ic_delete">Borrar día</string>
+    <string name="imgMedia">Imagen de la media</string>
 
     <string-array name="spinner_vida">
         <item>0</item>

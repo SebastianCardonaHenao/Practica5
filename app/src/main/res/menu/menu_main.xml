@@ -5,7 +5,7 @@
     <item
         android:id="@+id/itOrdenar"
         android:checkable="false"
-        android:enabled="false"
+        android:enabled="true"
         android:icon="@drawable/ordenar"
         android:title="@string/action_ordenar"
         app:showAsAction="ifRoom" />
