@@ -3,18 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/itOrdenar"
         android:checkable="false"
         android:enabled="false"
         android:icon="@drawable/ordenar"
         android:title="@string/action_ordenar"
         app:showAsAction="ifRoom" />
-    <item android:title="@string/action_valoravida"
-        app:showAsAction="never"/>
-    <item android:title="@string/action_fechas"
-        app:showAsAction="never"/>
-    <item android:title="@string/action_setting"
-        app:showAsAction="never"/>
-    <item android:title="@string/action_about"
-        app:showAsAction="never"/>
+    <item
+        android:id="@+id/itvaloraVida"
+        android:title="@string/action_valoravida"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/itMostrarFechas"
+        android:title="@string/action_fechas"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/itConfig"
+        android:title="@string/action_setting"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/itAcerca"
+        android:title="@string/action_about"
+        app:showAsAction="never" />
 
 </menu>

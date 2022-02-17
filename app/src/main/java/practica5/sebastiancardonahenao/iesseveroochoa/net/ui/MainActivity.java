@@ -1,10 +1,16 @@
 package practica5.sebastiancardonahenao.iesseveroochoa.net.ui;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ActionProvider;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -31,6 +37,8 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton btnPrueba;
     SearchView svBusqueda;
     DiaDiario diario;
+    Menu menu;
+    MenuItem itOrdena;
 
 
     @Override
@@ -54,17 +62,17 @@ public class MainActivity extends AppCompatActivity {
             adapter.setDias(diaDiarios);
             Log.d("P5","tamaño: "+diaDiarios.size());
         });
-
+        //
         adapter.setOnClickBorrarListener(this::borrarDia);
         adapter.setOnClickDiaDiarioListener(this::editar);
+        //////
 
         Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
         svBusqueda = findViewById(R.id.svBusqueda);
-
-
+        itOrdena = findViewById(R.id.itOrdenar);
         btnPrueba = findViewById(R.id.fab);
+
+        setSupportActionBar(toolbar);
         btnPrueba.setOnClickListener(e->nuevoDia());
 
         svBusqueda.setOnQueryTextListener(new
@@ -84,6 +92,31 @@ public class MainActivity extends AppCompatActivity {
               });
     }
 
+    private boolean ordena() {
+        final CharSequence[] items = { "Fecha", "Valoración", "Resumen"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        builder.setTitle("Ordenar por:");
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int item) {
+                switch (items[item].toString()){
+                    case "Fecha":
+                        //TODO
+                        break;
+                    case "Valoración":
+                        //TODO
+                        break;
+                    case "Resumen":
+                        //TODO
+                        break;
+                }
+                dialog.dismiss();
+
+            }
+        }).show();
+        return true;
+    }
+
     private void editar(DiaDiario diario1) {
         Intent i = new Intent(this, EdicionDiaActivityBien.class);
         i.putExtra("Datos",diario1);
@@ -97,7 +130,8 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("ACEPTAR", (dialog1, id) -> {
                     diarioViewModel.delete(diario1);
                     dialog1.cancel();
-                });
+                }).setNegativeButton("Cancelar",(dialog1, id) ->
+                dialog1.cancel());
         dialog.create();
         dialog.show();
     }
@@ -141,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
                         assert intent != null;
                         DiaDiario diaRecibido = intent.getExtras().getParcelable("Datos");
                         diarioViewModel.update(diaRecibido);
+                        ///NO FUNCIONA, MIRAR
                     }
                 }
             });

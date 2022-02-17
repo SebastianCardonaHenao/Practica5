@@ -60,7 +60,7 @@ public class EdicionDiaActivityBien extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         esteDia = bundle.getParcelable("Datos");
         if (esteDia!=null){
-            this.setTitle("Editar Tarea "+esteDia.getId());
+            this.setTitle("Editar Día "+esteDia.getId());
             editarDia();
         }
 
