@@ -21,6 +21,9 @@
     <string name="tvFecha">Aquí va la fecha</string>
     <string name="ic_delete">Borrar día</string>
     <string name="imgMedia">Imagen de la media</string>
+    <string name="preference_file">preferencias</string>
+    <string name="pref_key_ultimo_dia">pref_ultimo_dia</string>
+    <string name="itlastday">Último día</string>
 
     <string-array name="spinner_vida">
         <item>0</item>
@@ -35,5 +38,53 @@
         <item>9</item>
         <item>10</item>
     </string-array>
+
+    <string-array name="eres">
+        <item>Chico</item>
+        <item>Chica</item>
+    </string-array>
+
+    <!-- Strings de settings-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <string name="title_activity_preferencias">PreferenciasActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="titulo_settings">Datos Personales</string>
+    <string name="settings_nombre">Cuál es tu nombre</string>
+    <string name="settings_nombre_sum">Con qué nombre quieres que nos dirijamos a ti</string>
+    <string name="settings_fecha">Fecha de Cumpleaños</string>
+    <string name="settings_fecha_sum">Cuál es tu fecha de cumpleaños</string>
+    <string name="settings_eres">Eres...</string>
+    <string name="settings_eres_sum">Eres un/una...</string>
+    <string name="settings_recuerda">Configuración del programa</string>
+    <string name="settings_avisa">Avisarme de escribir en el Diario</string>
+    <string name="settings_avisa_sum">¿Desea que le avisemos que tiene que escribir en el diario?</string>
+    <string name="content_desc_img">Ver imágenes en la lista</string>
+
 
 </resources>

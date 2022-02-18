@@ -18,6 +18,9 @@
         android:title="@string/action_fechas"
         app:showAsAction="never" />
     <item
+        android:id="@+id/itLastDay"
+        android:title="@string/itlastday" />
+    <item
         android:id="@+id/itConfig"
         android:title="@string/action_setting"
         app:showAsAction="never" />

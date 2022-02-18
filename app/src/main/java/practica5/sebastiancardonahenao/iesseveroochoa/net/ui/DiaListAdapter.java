@@ -101,6 +101,9 @@ public class DiaListAdapter extends RecyclerView.Adapter<DiaListAdapter.DiaViewH
                 }
             });
         }
+        public DiaDiario getDia(){
+            return dias.get(DiaViewHolder.this.getBindingAdapterPosition());
+        }
 
     }
     public interface OnItemClickBorrarListener {

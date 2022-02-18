@@ -1,0 +1,37 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/titulo_settings">
+
+        <EditTextPreference
+            android:key="nombre"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="@string/settings_nombre_sum"
+            android:title="@string/settings_nombre" />
+        <EditTextPreference
+            android:key="fecha"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:summary="@string/settings_fecha_sum"
+            android:title="@string/settings_fecha" />
+        <ListPreference
+            android:defaultValue="true"
+            android:entries="@array/eres"
+            android:entryValues="@array/chico_chica"
+            android:key="sexo"
+            android:summary="@string/settings_eres_sum"
+            android:title="@string/settings_eres" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/settings_recuerda">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:icon="@android:drawable/ic_popup_reminder"
+            android:key="recordar"
+            android:summary="@string/settings_avisa_sum"
+            android:title="@string/settings_avisa" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

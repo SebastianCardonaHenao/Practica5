@@ -7,11 +7,6 @@
     tools:context=".ui.EdicionDiaActivityBien">
 
 
-    <androidx.constraintlayout.widget.Group
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="textInputLayout,tvFecha,spValoracion,scrollView2,textView5,calendario" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fbSave"
         android:layout_width="wrap_content"
@@ -42,15 +37,15 @@
 
     <Button
         android:id="@+id/calendario"
-        android:layout_width="wrap_content"
+        android:layout_width="52dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:contentDescription="@string/action_fechas"
         app:icon="@drawable/ic_action_calendar"
         app:layout_constraintBottom_toBottomOf="@+id/tvFecha"
-        app:layout_constraintEnd_toStartOf="@+id/textInputLayout"
         app:layout_constraintStart_toEndOf="@+id/tvFecha"
-        app:layout_constraintTop_toTopOf="@+id/tvFecha" />
+        app:layout_constraintTop_toTopOf="@+id/tvFecha"
+        style="@style/ToggleButtonWithIconOnly" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -60,7 +55,7 @@
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/calendario"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/calendario"
+        app:layout_constraintStart_toEndOf="@+id/btImagen"
         app:layout_constraintTop_toTopOf="@+id/calendario">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -79,8 +74,7 @@
         android:layout_marginTop="8dp"
         android:contentDescription="@string/speach_valor_vida"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toStartOf="@+id/ivFoto"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/calendario" />
 
@@ -100,8 +94,8 @@
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,5 +117,28 @@
             android:minHeight="48dp"
             android:textColorHint="#757575" />
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/ivFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spValoracion"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <Button
+        android:id="@+id/btImagen"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/content_desc_img"
+        android:textIsSelectable="false"
+        android:textSize="0sp"
+        app:icon="@android:drawable/ic_menu_gallery"
+        app:layout_constraintBottom_toBottomOf="@+id/calendario"
+        app:layout_constraintStart_toEndOf="@+id/calendario"
+        app:layout_constraintTop_toTopOf="@+id/calendario"
+        style="@style/ToggleButtonWithIconOnly" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

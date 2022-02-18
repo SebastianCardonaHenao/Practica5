@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="practica5.sebastiancardonahenao.iesseveroochoa.net">
+    package="practica5.sebastiancardonahenao.iesseveroochoa.net" >
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <protected-broadcast
+        android:name="android.intent.action.MEDIA_MOUNTED"/>
 
     <application
         android:allowBackup="true"
@@ -8,17 +16,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Practica5">
+        android:theme="@style/Theme.Practica5" >
         <activity
-            android:name=".media_average"
-            android:exported="false" />
+            android:name=".ui.PreferenciasActivity"
+            android:exported="false"
+            android:label="@string/title_activity_preferencias" />
         <activity
             android:name=".ui.EdicionDiaActivityBien"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.Practica5.NoActionBar">
+            android:theme="@style/Theme.Practica5.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
